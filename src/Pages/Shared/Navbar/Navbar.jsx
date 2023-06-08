@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import lottie from 'lottie-web';
 import logo from '../../../../public/logo.json';
 
 const Navbar = () => {
-  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const logoContainerRef = useRef(null);
 
   useEffect(() => {
@@ -56,6 +55,14 @@ const Navbar = () => {
             <li>
               <Link to="/image">Image</Link>
             </li>
+            <li>
+              <Link
+                to="/contact"
+                className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold"
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
         <Link
@@ -82,6 +89,14 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/image">Image</Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold"
+            >
+              Contact Us
+            </Link>
           </li>
         </ul>
       </div>
