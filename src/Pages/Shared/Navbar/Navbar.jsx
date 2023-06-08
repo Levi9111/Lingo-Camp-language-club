@@ -98,7 +98,7 @@ const Navbar = () => {
           <h3>LingoCamp</h3>
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
+      <div className="navbar-end w-3/4 hidden lg:flex ">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
@@ -118,7 +118,14 @@ const Navbar = () => {
                 <button onClick={hanldeLogOut}>Log Out</button>
               </li>
               <li>
-                <Link to="/image">Image</Link>
+                <div className="">
+                  <img
+                    src={user?.photoURL}
+                    alt=""
+                    title={user?.displayName}
+                    className="h-12 w-12 rounded-full"
+                  />
+                </div>
               </li>
             </>
           ) : (
@@ -129,7 +136,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold"
+              className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold mt-3"
             >
               Contact Us
             </Link>

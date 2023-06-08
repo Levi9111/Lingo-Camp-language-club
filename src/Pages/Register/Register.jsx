@@ -13,7 +13,7 @@ const Register = () => {
     formState: { errors },
     getValues,
   } = useForm();
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleLogin } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -25,6 +25,17 @@ const Register = () => {
         console.log(user);
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((response) => {
+        const user = response.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const validatePassword = (value) => {
