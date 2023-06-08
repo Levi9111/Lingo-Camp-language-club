@@ -1,10 +1,13 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import lottie from 'lottie-web';
 import logo from '../../../../public/logo.json';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navbar = () => {
   const logoContainerRef = useRef(null);
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -49,12 +52,20 @@ const Navbar = () => {
             <li>
               <Link to="/classes">Classes</Link>
             </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/image">Image</Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="/image">Image</Link>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
             <li>
               <Link
                 to="/contact"
