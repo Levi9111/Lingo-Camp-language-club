@@ -60,7 +60,7 @@ const Login = () => {
   };
 
   return (
-    <section className="form-container ">
+    <section className="login-container ">
       <form className="box" onSubmit={handleSubmit(onSubmit)}>
         <h1>login</h1>
         <input

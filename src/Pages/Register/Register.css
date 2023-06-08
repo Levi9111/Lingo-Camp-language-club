@@ -1,9 +1,9 @@
-.login-container {
-  height: 100vh;
+.register-container {
+  min-height: 140vh;
   width: auto;
   position: relative;
-  background-color: #3498db;
-  background-image: url('https://img.freepik.com/free-photo/russian-english-communication-language-concept_53876-123726.jpg?w=740&t=st=1686250817~exp=1686251417~hmac=0be11879e40a7d24d4aeae2d670127899d72308a0fd141870e606136b5fbd222');
+  background-color: #2ecc71;
+  background-image: url('https://images.unsplash.com/photo-1555424681-b0ecf4fe19a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,13 +14,14 @@
   padding: 20px;
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 25%;
   transform: translate(-50%, -50%);
   background: #19191981;
   text-align: center;
   border-radius: 10px;
 }
 
+.box input[type='text'],
 .box input[type='email'],
 .box input[type='password'] {
   border: 0;
@@ -44,6 +45,7 @@
   font-weight: 500;
 }
 
+.box input[type='text']:focus,
 .box input[type='email']:focus,
 .box input[type='password']:focus {
   width: 250px;
