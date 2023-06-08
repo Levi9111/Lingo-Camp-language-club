@@ -1,0 +1,97 @@
+.form-container {
+  height: 100vh;
+  width: auto;
+  display: grid;
+  position: relative;
+  background-color: #3498db;
+  background-image: url('https://img.freepik.com/free-photo/russian-english-communication-language-concept_53876-123726.jpg?w=740&t=st=1686250817~exp=1686251417~hmac=0be11879e40a7d24d4aeae2d670127899d72308a0fd141870e606136b5fbd222');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.box {
+  width: 500px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  background: #19191981;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.box input[type='email'],
+.box input[type='password'] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box h1 {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type='email']:focus,
+.box input[type='password']:focus {
+  width: 250px;
+  border-color: #2ecc71;
+}
+
+.box input[type='submit'] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type='submit']:hover {
+  background: #2ecc71;
+}
+
+.google-button {
+  border: 0;
+  background: none;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #cc3556;
+  padding: 6px 10px;
+  outline: none;
+  color: white;
+  border-radius: 100%;
+  transition: all 0.25s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.google-button:hover {
+  border: 2px solid #3498db;
+}
+
+.google-icon {
+  color: #cc3556;
+  display: block;
+  margin: 5px auto;
+}

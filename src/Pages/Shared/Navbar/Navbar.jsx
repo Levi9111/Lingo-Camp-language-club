@@ -58,6 +58,9 @@ const Navbar = () => {
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
                 <li>
+                  <Link>Log Out</Link>
+                </li>
+                <li>
                   <Link to="/image">Image</Link>
                 </li>
               </>
@@ -95,12 +98,23 @@ const Navbar = () => {
           <li>
             <Link to="/classes">Classes</Link>
           </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/image">Image</Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+              <li>
+                <Link>Log Out</Link>
+              </li>
+              <li>
+                <Link to="/image">Image</Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
           <li>
             <Link
               to="/contact"
