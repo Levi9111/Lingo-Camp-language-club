@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import lottie from 'lottie-web';
 import logo from '../../../../public/logo.json';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const logoContainerRef = useRef(null);
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -21,6 +21,17 @@ const Navbar = () => {
       anim.destroy();
     };
   }, []);
+
+  const hanldeLogOut = () => {
+    logOut();
+    Swal.fire({
+      icon: 'success',
+      title: 'Logout Successful',
+      text: 'You have been logged out successfully.',
+      showConfirmButton: true,
+      confirmButtonText: 'OK',
+    });
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -104,7 +115,7 @@ const Navbar = () => {
                 <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <Link>Log Out</Link>
+                <button onClick={hanldeLogOut}>Log Out</button>
               </li>
               <li>
                 <Link to="/image">Image</Link>
