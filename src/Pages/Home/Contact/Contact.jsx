@@ -1,7 +1,9 @@
 import './Contact.css';
+import { Element } from 'react-scroll';
 
 const Contact = () => {
   return (
+    <Element name="contact-form">
     <section className="contact-section">
       <div className="  grid md:grid-cols-2 gap-5 md:max-w-[90%] mx-auto">
         <div className="contact">
@@ -42,6 +44,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </Element>
   );
 };
 

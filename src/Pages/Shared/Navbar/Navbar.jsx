@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
 import lottie from 'lottie-web';
 import logo from '../../../../public/logo.json';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -81,12 +82,14 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <Link
-                to="/contact"
-                className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold"
-              >
-                Contact Us
-              </Link>
+                <ScrollLink
+                  to="contact-form"
+                  smooth={true}
+                  duration={800}
+                  className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold mt-3"
+                >
+                  Contact Us
+                </ScrollLink>
             </li>
           </ul>
         </div>
@@ -134,12 +137,14 @@ const Navbar = () => {
             </li>
           )}
           <li>
-            <Link
-              to="/contact"
+            <ScrollLink
+              to="contact-form"
+              smooth={true}
+              duration={800}
               className="btn bg-[#7971ea] hover:bg-[#1c4b82] border-[#7971ea] text-white font-semibold mt-3"
             >
               Contact Us
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
       </div>
