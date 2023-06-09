@@ -4,11 +4,19 @@ import './PopularInstructors.css';
 const PopularInstructors = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    fetch('instructors.json')
+    fetch('http://localhost:3000/instructors')
       .then((res) => res.json())
       .then((data) => setInstructors(data))
       .catch((err) => console.log(err));
   }, []);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/reviews")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setReviews(data);
+  //     });
+  // }, []);
 
   const sortedInstructors = instructors.sort(
     (a, b) => b.numClasses - a.numClasses,
