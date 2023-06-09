@@ -41,9 +41,14 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const createUser = (email, password) => {
+  const createUser = async (email, password, name, photoUrl) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(auth.currentUser, {
+      displayName: name || '',
+      photoURL: photoUrl || '',
+    });
+    return auth.currentUser;
   };
 
   const logIn = (email, password) => {

@@ -2,9 +2,10 @@ import { useForm } from 'react-hook-form';
 import './Register.css';
 import Warning from '../Shared/Warning/Warning';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const {
@@ -13,18 +14,57 @@ const Register = () => {
     formState: { errors },
     getValues,
   } = useForm();
-  const { createUser, googleLogin } = useContext(AuthContext);
+  const { createUser, googleLogin, updateUser, logOut } =
+    useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+  
+    const from = location.state?.form?.pathName || "/";
+  
 
   const onSubmit = (data) => {
     console.log(data);
-    // Handle form submission here
+
+    // Handle form submission with email and password
     const { email, password, name, photoURL: photo } = data;
     createUser(email, password, name, photo)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+        // console.log(user);
+
+        updateUser(name, photo).then(() => {
+          const savedUser = { name, email };
+          fetch(`http://localhost:3000/users`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(savedUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Sign-up Successful',
+                  text: 'Congratulations! Welcome to LingoCamp. Please login to your account.',
+                  showConfirmButton: true,
+                });
+                navigate('/');
+                logOut().then();
+              }
+            });
+        });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Registration Failed',
+          text: `Oops! ${err}`,
+          cancelButtonText: 'Close',
+          showCancelButton: true,
+        });
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -32,6 +72,7 @@ const Register = () => {
       .then((response) => {
         const user = response.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
