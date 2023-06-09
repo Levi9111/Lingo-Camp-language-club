@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .heading-special {
+    @apply text-center text-2xl underline italic mb-5 font-semibold text-violet-800;
+  }
+}

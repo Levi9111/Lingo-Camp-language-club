@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink, animateScroll } from 'react-scroll';
+import { Link as ScrollLink  } from 'react-scroll';
 import lottie from 'lottie-web';
 import logo from '../../../../public/logo.json';
 import { AuthContext } from '../../../Provider/AuthProvider';

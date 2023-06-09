@@ -9,9 +9,6 @@
       "Spanish Beginner",
       "Italian Beginner",
       "French Intermediate",
-      "German Advanced",
-      "Chinese Beginner",
-      "Japanese Intermediate",
       "Russian Beginner",
       "Arabic Intermediate"
     ]
@@ -25,11 +22,6 @@
     "classesTaken": [
       "French Intermediate",
       "German Advanced",
-      "Portuguese Advanced",
-      "Swedish Intermediate",
-      "Greek Beginner",
-      "Spanish Beginner",
-      "Italian Beginner",
       "Russian Beginner",
       "Arabic Intermediate",
       "Chinese Beginner"
@@ -44,8 +36,6 @@
     "classesTaken": [
       "German Advanced",
       "Russian Beginner",
-      "Arabic Intermediate",
-      "Portuguese Advanced",
       "Spanish Beginner",
       "Italian Beginner",
       "Greek Beginner"
@@ -68,7 +58,7 @@
   },
   {
     "_id": 5,
-    "image": "https://img.freepik.com/free-photo/smiling-young-financial-manager-showing-charts-graphs-white-board_1098-19846.jpg?size=626&ext=jpg&ga=GA1.2.1765512466.1685099173&semt=ais",
+    "image": "https://img.freepik.com/free-photo/portrait-asian-businessman-sitting-office-desk-texting-his-phone_1098-19842.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=ais",
     "name": "Li Wei",
     "email": "li.wei@example.com",
     "numClasses": 12,

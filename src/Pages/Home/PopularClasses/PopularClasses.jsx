@@ -14,12 +14,9 @@ const PopularClasses = () => {
     (languageClass) => languageClass.category === 'popular',
   );
 
-
   return (
     <section>
-      <h3 className="text-center text-2xl underline italic mb-5 font-semibold text-violet-800">
-        Popular Classes
-      </h3>
+      <h3 className="heading-special">Popular Classes</h3>
       <div className="grid md:grid-cols-3">
         {popularClasses.map((popularClass, index) => (
           <div className="box-wrapper" key={popularClass.id}>

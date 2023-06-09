@@ -20,9 +20,7 @@ const PopularInstructors = () => {
 
   return (
     <section>
-      <h3 className="text-center text-2xl underline italic mb-5 font-semibold text-violet-800">
-        Popular Instructors
-      </h3>
+      <h3 className="heading-special">Popular Instructors</h3>
       <div className="grid md:grid-cols-3 gap-5 mx-auto my-12">
         {popularInstructors.map((instructor) => (
           <div
