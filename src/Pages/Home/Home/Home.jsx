@@ -1,4 +1,5 @@
 import Banner from '../Banner/Banner';
+import Contact from '../Contact/Contact';
 import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 
@@ -10,6 +11,7 @@ const Home = () => {
         <PopularClasses></PopularClasses>
         <PopularInstructors></PopularInstructors>
       </div>
+      <Contact></Contact>
     </section>
   );
 };
