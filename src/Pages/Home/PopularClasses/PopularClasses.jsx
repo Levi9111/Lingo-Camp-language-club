@@ -14,10 +14,9 @@ const PopularClasses = () => {
     (languageClass) => languageClass.category === 'popular',
   );
 
-  console.log(popularClasses);
 
   return (
-    <section className='md:max-w-[80%] mx-auto'>
+    <section>
       <h3 className="text-center text-2xl underline italic mb-5 font-semibold text-violet-800">
         Popular Classes
       </h3>

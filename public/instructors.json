@@ -1,0 +1,150 @@
+[
+  {
+    "_id": 1,
+    "image": "https://img.freepik.com/free-photo/smiling-woman-writing-notes-tablet-digital-device_53876-111318.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=sph",
+    "name": "Maria Hernandez",
+    "email": "maria.hernandez@example.com",
+    "numClasses": 8,
+    "classesTaken": [
+      "Spanish Beginner",
+      "Italian Beginner",
+      "French Intermediate",
+      "German Advanced",
+      "Chinese Beginner",
+      "Japanese Intermediate",
+      "Russian Beginner",
+      "Arabic Intermediate"
+    ]
+  },
+  {
+    "_id": 2,
+    "image": "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=sph",
+    "name": "Jean-Luc Dubois",
+    "email": "jeanluc.dubois@example.com",
+    "numClasses": 10,
+    "classesTaken": [
+      "French Intermediate",
+      "German Advanced",
+      "Portuguese Advanced",
+      "Swedish Intermediate",
+      "Greek Beginner",
+      "Spanish Beginner",
+      "Italian Beginner",
+      "Russian Beginner",
+      "Arabic Intermediate",
+      "Chinese Beginner"
+    ]
+  },
+  {
+    "_id": 3,
+    "image": "https://img.freepik.com/free-photo/beautiful-young-man-student-businessman-jacket-holds-his-arms-crossed-isolated-light-grey-wall_231208-6135.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=sph",
+    "name": "Hans Müller",
+    "email": "hans.muller@example.com",
+    "numClasses": 7,
+    "classesTaken": [
+      "German Advanced",
+      "Russian Beginner",
+      "Arabic Intermediate",
+      "Portuguese Advanced",
+      "Spanish Beginner",
+      "Italian Beginner",
+      "Greek Beginner"
+    ]
+  },
+  {
+    "_id": 4,
+    "image": "https://img.freepik.com/free-photo/young-smiling-student-intern-eyeglasses-standing-with-folder-red-wall_158595-4959.jpg?w=740&t=st=1686305881~exp=1686306481~hmac=de7e1e34377402d47ad9ccda5afc3caf9e9653d075f644c9fc322dfb7805d7b5",
+    "name": "Giulia Rossi",
+    "email": "giulia.rossi@example.com",
+    "numClasses": 16,
+    "classesTaken": [
+      "Italian Beginner",
+      "French Intermediate",
+      "German Advanced",
+      "Swedish Intermediate",
+      "Chinese Beginner",
+      "Japanese Intermediate"
+    ]
+  },
+  {
+    "_id": 5,
+    "image": "https://img.freepik.com/free-photo/smiling-young-financial-manager-showing-charts-graphs-white-board_1098-19846.jpg?size=626&ext=jpg&ga=GA1.2.1765512466.1685099173&semt=ais",
+    "name": "Li Wei",
+    "email": "li.wei@example.com",
+    "numClasses": 12,
+    "classesTaken": [
+      "Chinese Beginner",
+      "Japanese Intermediate",
+      "Italian Beginner",
+      "Greek Beginner",
+      "Swedish Intermediate"
+    ]
+  },
+  {
+    "_id": 6,
+    "image": "https://img.freepik.com/free-photo/attractive-young-businesswoman-ready-give-business-presentation-standing-flip-chart_662251-401.jpg?size=626&ext=jpg&ga=GA1.2.1765512466.1685099173&semt=ais",
+    "name": "Yuki Tanaka",
+    "email": "yuki.tanaka@example.com",
+    "numClasses": 6,
+    "classesTaken": [
+      "Japanese Intermediate",
+      "Chinese Beginner",
+      "Arabic Intermediate",
+      "Portuguese Advanced",
+      "Spanish Beginner",
+      "Italian Beginner"
+    ]
+  },
+  {
+    "_id": 7,
+    "image": "https://img.freepik.com/free-photo/man-working-office-holding-papers-with-laptop-desk_1150-52108.jpg?size=626&ext=jpg&ga=GA1.2.1765512466.1685099173&semt=ais",
+    "name": "Ivan Petrov",
+    "email": "ivan.petrov@example.com",
+    "numClasses": 17,
+    "classesTaken": [
+      "Russian Beginner",
+      "Spanish Beginner",
+      "German Advanced",
+      "Chinese Beginner",
+      "Japanese Intermediate"
+    ]
+  },
+  {
+    "_id": 8,
+    "image": "https://img.freepik.com/free-photo/front-view-man-classroom_23-2150444952.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=ais",
+    "name": "Ahmed Khalid",
+    "email": "ahmed.khalid@example.com",
+    "numClasses": 12,
+    "classesTaken": [
+      "Arabic Intermediate",
+      "Russian Beginner",
+      "German Advanced",
+      "Japanese Intermediate"
+    ]
+  },
+  {
+    "_id": 9,
+    "image": "https://img.freepik.com/free-photo/girl-with-marker-near-blackboard-looking-camera_259150-60355.jpg?size=626&ext=jpg&ga=GA1.2.1765512466.1685099173&semt=ais",
+    "name": "Ana Silva",
+    "email": "ana.silva@example.com",
+    "numClasses": 6,
+    "classesTaken": [
+      "Portuguese Advanced",
+      "Italian Beginner",
+      "Spanish Beginner"
+    ]
+  },
+  {
+    "_id": 10,
+    "image": "https://img.freepik.com/free-photo/portrait-asian-businessman-sitting-office-desk-texting-his-phone_1098-19842.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=ais",
+    "name": "Kim Ji-hyun",
+    "email": "kim.jihyun@example.com",
+    "numClasses": 9,
+    "classesTaken": [
+      "Korean Beginner",
+      "Japanese Intermediate",
+      "Chinese Beginner",
+      "German Advanced"
+    ]
+  }
+]
