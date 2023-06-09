@@ -5,7 +5,7 @@ const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
   //   const [popularClasses, setPopularClasses] = useState([]);
   useEffect(() => {
-    fetch('classes.json')
+    fetch('http://localhost:3000/classes')
       .then((res) => res.json())
       .then((data) => setClasses(data))
       .catch((err) => console.log(err));
@@ -19,7 +19,7 @@ const PopularClasses = () => {
       <h3 className="heading-special">Popular Classes</h3>
       <div className="grid md:grid-cols-3">
         {popularClasses.map((popularClass, index) => (
-          <div className="box-wrapper" key={popularClass.id}>
+          <div className="box-wrapper" key={popularClass._id}>
             <figure className="shape-box shape-box_half">
               <img src={popularClass.image} alt="" />
               <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
