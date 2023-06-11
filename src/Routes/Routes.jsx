@@ -5,6 +5,10 @@ import Error from '../Error/Error';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Instructors from '../Pages/Instructors/Instructors';
+import Classes from '../Pages/Classes/Classes';
+import Dashboard from '../Dashboard/Dashboard/Dashboard';
+import MyCourses from '../Dashboard/MyCourses/MyCourses';
+import PrivateRoute from './PrivateRoute';
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +31,26 @@ export const router = createBrowserRouter([
       {
         path: 'instructors',
         element: <Instructors></Instructors>,
+      },
+      {
+        path: 'classes',
+        element: <Classes></Classes>,
+      },
+      {
+        path: 'dashboard',
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'mycourses',
+        element: (
+          <PrivateRoute>
+            <MyCourses></MyCourses>
+          </PrivateRoute>
+        ),
       },
     ],
   },
