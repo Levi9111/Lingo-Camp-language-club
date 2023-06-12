@@ -40,5 +40,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-<Link to='/mycourses'>My Courses</Link>

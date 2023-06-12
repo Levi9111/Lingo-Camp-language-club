@@ -1,10 +1,10 @@
 import './MyCourses.css';
 import useCourse from '../../Hooks/useCourse';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyCourses = () => {
   const [course, refetch] = useCourse();
-  console.log(course);
 
   const handleDeleteCourse = (course) => {
     Swal.fire({
@@ -40,6 +40,7 @@ const MyCourses = () => {
       }
     });
   };
+
   return (
     <section className="table-body" translate="no">
       <h1>
@@ -74,7 +75,7 @@ const MyCourses = () => {
               <td>{singleCourse.instructor}</td>
               <td>${singleCourse.price}</td>
               <td>
-                <button>Pay</button>
+                <Link to={`/courses/payment/${singleCourse._id}`}>Pay</Link>
               </td>
               <td>
                 <button onClick={() => handleDeleteCourse(singleCourse)}>

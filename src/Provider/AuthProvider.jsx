@@ -26,7 +26,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUsers(currentUser);
-      console.log(currentUser);
       if (currentUser) {
         axios
           .post(`http://localhost:3000/jwt`, { email: currentUser.email })
@@ -81,6 +80,9 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     updateUser,
   };
+
+  console.log(`User:`, user);
+
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

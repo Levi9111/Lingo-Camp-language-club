@@ -1,0 +1,46 @@
+.wrapper {
+  width: 100%;
+  min-height: 120vh;
+  display: grid;
+  place-items: center;
+  background: #283149;
+  background-image: url('https://img.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=ais');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  margin-top: 55px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.wrapper-card {
+  position: relative;
+  width: 396px;
+  height: 288px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 16px;
+  border: solid 4px rgba(255, 255, 255, 0.1);
+
+  background-image: url('https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?size=626&ext=jpg&ga=GA1.1.1765512466.1685099173&semt=ais');
+  background-position: center;
+  background-size: cover;
+
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
+    rgba(255, 255, 255, 0.12) 0px -12px 30px,
+    rgba(255, 255, 255, 0.12) 0px 4px 6px,
+    rgba(255, 255, 255, 0.17) 0px 12px 13px,
+    rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+.wrapper-top img {
+  width: 20px;
+}
