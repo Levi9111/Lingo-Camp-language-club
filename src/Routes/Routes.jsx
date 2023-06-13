@@ -11,6 +11,8 @@ import MyCourses from '../Dashboard/MyCourses/MyCourses';
 import PrivateRoute from './PrivateRoute';
 import Payment from '../Pages/Payment/Payment';
 import History from '../Dashboard/History/History';
+import AddClass from '../Dashboard/AddClass/AddClass';
+import MyClasses from '../Dashboard/MyClasses/MyClasses';
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +63,14 @@ export const router = createBrowserRouter([
       {
         path: 'history',
         element: <History></History>,
+      },
+      {
+        path: 'addclass',
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: 'myclasses',
+        element: <MyClasses></MyClasses>,
       },
     ],
   },
