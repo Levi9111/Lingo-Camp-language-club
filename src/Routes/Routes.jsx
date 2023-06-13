@@ -10,6 +10,7 @@ import Dashboard from '../Dashboard/Dashboard/Dashboard';
 import MyCourses from '../Dashboard/MyCourses/MyCourses';
 import PrivateRoute from './PrivateRoute';
 import Payment from '../Pages/Payment/Payment';
+import History from '../Dashboard/History/History';
 
 export const router = createBrowserRouter([
   {
@@ -56,7 +57,10 @@ export const router = createBrowserRouter([
       {
         path: 'courses/payment/:id',
         element: <Payment></Payment>,
-        // loader: ({ params }) => `http://localhost:3000/courses/${params._id}`,
+      },
+      {
+        path: 'history',
+        element: <History></History>,
       },
     ],
   },

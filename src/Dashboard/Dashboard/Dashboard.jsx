@@ -17,7 +17,7 @@ const Dashboard = () => {
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
           <li><Link to='/mycourses'>My Courses</Link></li>
-          <li><a>Navbar Item 2</a></li>
+          <li><Link to='/history'>My Purchases</Link></li>
         </ul>
       </div>
     </div>
@@ -29,7 +29,7 @@ const Dashboard = () => {
     <ul className="menu p-4 w-80 h-full bg-base-200">
       {/* Sidebar content here */}
       <li><Link to='/mycourses'>My Courses</Link></li>
-      <li><a>Sidebar Item 2</a></li>
+      <li><Link to='/history'>My Purchases</Link></li>
       
     </ul>
     

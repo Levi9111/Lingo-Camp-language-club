@@ -34,9 +34,6 @@ const CheckoutForm = ({ course, price }) => {
       return;
     }
 
-    // Get a reference to a mounted CardElement. Elements knows how
-    // to find your CardElement because there can only ever be one of
-    // each type of element.
     const card = elements.getElement(CardElement);
 
     if (card == null) {
@@ -94,7 +91,7 @@ const CheckoutForm = ({ course, price }) => {
         email: asyncEmail,
         transactionId: paymentIntent._id,
         price: +price,
-        date: new Date(),
+        date: new Date().toLocaleDateString('en-US'),
         quantity: 1,
         courseIdentity: course._id,
         courseListIdentity: course.courseId,
