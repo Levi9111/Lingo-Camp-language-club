@@ -4,38 +4,32 @@ const History = () => {
   const [purchases, setPurchases] = useState([]);
 
   useEffect(() => {
-    fetch(`https://lingo-camp-server.vercel.app/history`)
+    fetch('https://lingo-camp-server.vercel.app/history')
       .then((res) => res.json())
       .then((data) => {
         setPurchases(data.reverse());
+      })
+      .catch((error) => {
+        console.error('Failed to fetch purchase history:', error);
       });
   }, []);
-  console.log(purchases);
 
   const handleDeleteHistory = () => {
-    fetch(`https://lingo-camp-server.vercel.app/history`, {
+    fetch('https://lingo-camp-server.vercel.app/history', {
       method: 'DELETE',
     })
-      .then((res) => {
-        res.json();
-        console.log(res);
-      })
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPurchases([]);
       })
       .catch((error) => {
-        // Handle error
         console.error('Failed to clear history:', error);
       });
   };
 
   return (
     <section className="table-body" translate="no">
-      <button
-        className="btn-clear"
-        onClick={() => handleDeleteHistory(purchases)}
-      >
+      <button className="btn-clear" onClick={handleDeleteHistory}>
         <p>Clear History</p>
       </button>
       <h1>
@@ -49,7 +43,6 @@ const History = () => {
             <th>
               <h1>Name</h1>
             </th>
-
             <th>
               <h1>Price</h1>
             </th>
@@ -64,7 +57,7 @@ const History = () => {
         <tbody>
           {purchases.map((purchase) => (
             <tr key={purchase._id}>
-              <td>{purchase?.courseName}</td>
+              <td>{purchase.courseName}</td>
               <td>${purchase.price}</td>
               <td>{purchase.courseIdentity}</td>
               <td>{purchase.date}</td>

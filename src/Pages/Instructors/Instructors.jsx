@@ -7,9 +7,7 @@ const Instructors = () => {
     fetch('https://lingo-camp-server.vercel.app/instructors')
       .then((res) => res.json())
       .then((data) => setInstructors(data))
-      .catch((err) => console.log(err));
   }, []);
-  console.log(instructors);
   return (
     <section className="my-7">
       <h3 className="heading-special">

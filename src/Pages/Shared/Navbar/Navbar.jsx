@@ -23,7 +23,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const hanldeLogOut = () => {
+  const handleLogOut = () => {
     logOut();
     Swal.fire({
       icon: 'success',
@@ -70,7 +70,7 @@ const Navbar = () => {
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
                 <li>
-                  <Link>Log Out</Link>
+                  <button onClick={handleLogOut}>Log Out</button>
                 </li>
                 <li>
                   <Link to="/image">Image</Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
           <h3>LingoCamp</h3>
         </Link>
       </div>
-      <div className="navbar-end w-3/4 hidden lg:flex ">
+      <div className="navbar-end w-3/4 hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <button onClick={hanldeLogOut}>Log Out</button>
+                <button onClick={handleLogOut}>Log Out</button>
               </li>
               <li>
                 <div className="">

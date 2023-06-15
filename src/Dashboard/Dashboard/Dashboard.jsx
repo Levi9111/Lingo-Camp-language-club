@@ -1,4 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
+
 const Dashboard = () => {
   return (
     <section>
@@ -50,7 +52,9 @@ const Dashboard = () => {
             </div>
           </div>
           {/* Page content here */}
-          <Outlet></Outlet>
+          <Fade cascade>
+            <Outlet />
+          </Fade>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>

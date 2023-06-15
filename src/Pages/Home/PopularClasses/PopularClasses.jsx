@@ -8,7 +8,6 @@ const PopularClasses = () => {
     fetch('https://lingo-camp-server.vercel.app/classes')
       .then((res) => res.json())
       .then((data) => setClasses(data))
-      .catch((err) => console.log(err));
   }, []);
   const popularClasses = classes.filter(
     (languageClass) => languageClass.category === 'popular',

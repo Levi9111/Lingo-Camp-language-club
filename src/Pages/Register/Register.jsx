@@ -28,14 +28,11 @@ const Register = () => {
   const from = location.state?.form?.pathName || '/';
 
   const onSubmit = (data) => {
-    console.log(data);
-
     // Handle form submission with email and password
     const { email, password, name, photoURL: photo } = data;
     createUser(email, password, name, photo)
       .then((res) => {
         const user = res.user;
-        // console.log(user);
 
         updateUser(name, photo).then(() => {
           const savedUser = { name, email };
@@ -76,11 +73,9 @@ const Register = () => {
     googleLogin()
       .then((response) => {
         const user = response.user;
-        console.log(user);
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 

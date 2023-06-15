@@ -46,9 +46,6 @@ const Payment = () => {
   const selectedCourse = course && id && course.find((data) => data._id === id);
   const price = selectedCourse && selectedCourse.price;
 
-  console.log(selectedCourse);
-  console.log('Price:', price, typeof price);
-
   return (
     <section>
       <div className="wrapper">

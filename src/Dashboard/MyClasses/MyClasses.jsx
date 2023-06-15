@@ -23,7 +23,6 @@ const MyClasses = () => {
       });
   }, [user]);
 
-  console.log(classes);
 
   return (
     <div>

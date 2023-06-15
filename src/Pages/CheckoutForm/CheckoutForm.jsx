@@ -5,6 +5,8 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CheckoutForm = ({ course, price }) => {
   const stripe = useStripe();
@@ -20,7 +22,6 @@ const CheckoutForm = ({ course, price }) => {
 
   useEffect(() => {
     axiosSecure.post('/create-payment-intent', { price }).then((res) => {
-      console.log(res.data.clientSecret);
       setClientSecret(res.data.clientSecret);
     });
   }, [price, axiosSecure]);
@@ -36,7 +37,7 @@ const CheckoutForm = ({ course, price }) => {
 
     const card = elements.getElement(CardElement);
 
-    if (card == null) {
+    if (!card) {
       return;
     }
 
@@ -47,7 +48,6 @@ const CheckoutForm = ({ course, price }) => {
     });
 
     if (error) {
-      console.log('[error]', error);
       setCardError(error.message);
     } else {
       setCardError('');
@@ -81,14 +81,13 @@ const CheckoutForm = ({ course, price }) => {
       console.log(confirmError);
     }
 
-    console.log(`Payment Intent`, paymentIntent);
     setProcessing(false);
-    if (paymentIntent.status === `succeeded`) {
+    if (paymentIntent.status === 'succeeded') {
       setTransactionId(paymentIntent.id);
 
       const payment = {
         email: asyncEmail,
-        transactionId: paymentIntent._id,
+        transactionId: paymentIntent.id,
         price: +price,
         date: new Date().toLocaleDateString('en-US'),
         quantity: 1,
@@ -101,7 +100,6 @@ const CheckoutForm = ({ course, price }) => {
       axiosSecure
         .post('/payment', payment)
         .then((res) => {
-          console.log(res.data);
           if (res.data.insertResult.insertedId) {
             // Display confirmation or redirect to success page
             Swal.fire({
@@ -115,11 +113,11 @@ const CheckoutForm = ({ course, price }) => {
               .delete(`/courses/${payment.courseIdentity}`)
               .then((deleteRes) => {
                 if (deleteRes.data.deletedCount === 1) {
-                  console.log('Course deleted successfully');
+                  toast.success('Course deleted successfully');
                 }
               })
               .catch((error) => {
-                console.error('Delete course error:', error);
+                toast.error('Error deleting course: ' + error);
               });
           }
         })
@@ -161,7 +159,7 @@ const CheckoutForm = ({ course, price }) => {
           Pay
         </button>
       </form>
-      {cardError && <p>{cardError.message}</p>}
+      {cardError && <p>{cardError}</p>}
 
       {transactionId && (
         <p>

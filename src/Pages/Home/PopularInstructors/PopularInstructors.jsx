@@ -7,24 +7,13 @@ const PopularInstructors = () => {
     fetch('https://lingo-camp-server.vercel.app/instructors')
       .then((res) => res.json())
       .then((data) => setInstructors(data))
-      .catch((err) => console.log(err));
   }, []);
-
-  // useEffect(() => {
-  //   fetch("https://lingo-camp-server.vercel.app/reviews")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setReviews(data);
-  //     });
-  // }, []);
 
   const sortedInstructors = instructors.sort(
     (a, b) => b.numClasses - a.numClasses,
   );
 
   const popularInstructors = sortedInstructors.slice(0, 6);
-
-  console.log(popularInstructors);
 
   return (
     <section>

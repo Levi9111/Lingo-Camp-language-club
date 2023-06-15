@@ -18,7 +18,7 @@ const AddClass = () => {
       image: classImage,
       name: className,
       instructor: user?.displayName,
-      email: user?.email || `No email available`,
+      email: user?.email || 'No email available',
       availableSeats: +availableSeats,
       price: +price,
       category: 'good',
@@ -36,7 +36,7 @@ const AddClass = () => {
       .then((res) => res.json())
       .then((data) => {
         // Handle the response from the server
-        console.log('New class added:', data);
+        // console.log('New class added:', data);
         setFormVisible(false);
         setFormSuccess(true);
       })

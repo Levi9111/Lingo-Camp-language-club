@@ -25,14 +25,12 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data.email;
     const password = data.password;
 
     logIn(email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
         Swal.fire({
           icon: 'success',
           title: 'Login Successful',
@@ -57,10 +55,8 @@ const Login = () => {
     googleLogin()
       .then((response) => {
         const user = response.user;
-        console.log(user);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 

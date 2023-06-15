@@ -12,7 +12,6 @@ const HandleClasses = ({ course }) => {
   const [totalStudents, setTotalStudents] = useState(numStudents);
 
   const handleAddCourse = () => {
-    console.log(course);
     const newAvailableSeats = availableSeats - 1;
     const newNumStudents = numStudents + 1;
     setTotalSeats(newAvailableSeats);
@@ -46,6 +45,7 @@ const HandleClasses = ({ course }) => {
         });
     }
   };
+
   return (
     <div className="card-box">
       <div
@@ -57,12 +57,12 @@ const HandleClasses = ({ course }) => {
           style={{ backgroundImage: `url(${image})` }}
         ></span>
         <div className="course-content">
-          <h3>Instrouctor: {instructor}</h3>
+          <h3>Instructor: {instructor}</h3>
           <p>Total Students: {totalStudents}</p>
           <p className={`${availableSeats > 0 ? '' : 'text-red-500'}`}>
-            Seat Available: {totalSeats}
+            Seats Available: {totalSeats}
           </p>
-          <p>Course Price : ${price}</p>
+          <p>Course Price: ${price}</p>
           <button
             onClick={handleAddCourse}
             className={`w-full px-3 py-2 rounded-md absolute top-48 left-0 ${
@@ -70,15 +70,13 @@ const HandleClasses = ({ course }) => {
             }`}
             disabled={availableSeats <= 0}
           >
-            Select course
+            Select Course
           </button>
         </div>
       </div>
     </div>
   );
 };
-
-// prop-types is a library in React that provides a way to document and validate the types of props passed to React components.
 
 HandleClasses.propTypes = {
   course: PropTypes.shape({
