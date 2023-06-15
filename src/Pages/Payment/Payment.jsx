@@ -21,7 +21,7 @@ const Payment = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/courses?email=${user?.email}`,
+          `https://lingo-camp-server.vercel.app/courses?email=${user?.email}`,
         );
         const data = await response.json();
         setCourse(data);

@@ -39,7 +39,7 @@ const Register = () => {
 
         updateUser(name, photo).then(() => {
           const savedUser = { name, email };
-          fetch(`http://localhost:3000/users`, {
+          fetch(`https://lingo-camp-server.vercel.app/users`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

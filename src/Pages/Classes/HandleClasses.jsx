@@ -26,7 +26,7 @@ const HandleClasses = ({ course }) => {
         price,
         email: user.email,
       };
-      fetch(`http://localhost:3000/courses`, {
+      fetch(`https://lingo-camp-server.vercel.app/courses`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -44,9 +44,6 @@ const HandleClasses = ({ course }) => {
             });
           }
         });
-
-
-        
     }
   };
   return (

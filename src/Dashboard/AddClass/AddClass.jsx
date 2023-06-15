@@ -26,7 +26,7 @@ const AddClass = () => {
       date: new Date().toLocaleDateString('en-US'),
     };
 
-    fetch('http://localhost:3000/classes', {
+    fetch('https://lingo-camp-server.vercel.app/classes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

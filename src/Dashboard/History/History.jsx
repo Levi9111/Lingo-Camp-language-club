@@ -4,7 +4,7 @@ const History = () => {
   const [purchases, setPurchases] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/history`)
+    fetch(`https://lingo-camp-server.vercel.app/history`)
       .then((res) => res.json())
       .then((data) => {
         setPurchases(data.reverse());
@@ -13,7 +13,7 @@ const History = () => {
   console.log(purchases);
 
   const handleDeleteHistory = () => {
-    fetch(`http://localhost:3000/history`, {
+    fetch(`https://lingo-camp-server.vercel.app/history`, {
       method: 'DELETE',
     })
       .then((res) => {

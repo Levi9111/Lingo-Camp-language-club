@@ -8,7 +8,7 @@ const MyClasses = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/classes', {
+    fetch('https://lingo-camp-server.vercel.app/classes', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

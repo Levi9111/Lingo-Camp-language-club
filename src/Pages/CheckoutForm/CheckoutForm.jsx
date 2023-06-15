@@ -108,7 +108,7 @@ const CheckoutForm = ({ course, price }) => {
               icon: 'success',
               title: 'Transaction completed successfully',
             }).then(() => {
-              navigate('/mycourses');
+              navigate('/dashboard/mycourses');
             });
 
             axiosSecure

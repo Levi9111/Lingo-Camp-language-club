@@ -28,7 +28,9 @@ const AuthProvider = ({ children }) => {
       setUsers(currentUser);
       if (currentUser) {
         axios
-          .post(`http://localhost:3000/jwt`, { email: currentUser.email })
+          .post(`https://lingo-camp-server.vercel.app/jwt`, {
+            email: currentUser.email,
+          })
           .then((data) => {
             localStorage.setItem('access_token', data.data.token);
           });

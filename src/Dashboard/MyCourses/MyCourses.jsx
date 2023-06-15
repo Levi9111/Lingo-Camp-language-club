@@ -18,7 +18,7 @@ const MyCourses = () => {
       cancelButtonText: 'Cancel',
     }).then((res) => {
       if (res.isConfirmed) {
-        fetch(`http://localhost:3000/courses/${course._id}`, {
+        fetch(`https://lingo-camp-server.vercel.app/courses/${course._id}`, {
           method: 'DELETE',
           headers: {
             'content-type': 'application/json',
@@ -75,7 +75,9 @@ const MyCourses = () => {
               <td>{singleCourse.instructor}</td>
               <td>${singleCourse.price}</td>
               <td>
-                <Link to={`/courses/payment/${singleCourse._id}`}>Pay</Link>
+                <Link to={`/dashboard/courses/payment/${singleCourse._id}`}>
+                  Pay
+                </Link>
               </td>
               <td>
                 <button onClick={() => handleDeleteCourse(singleCourse)}>

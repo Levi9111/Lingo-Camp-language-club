@@ -11,7 +11,7 @@ const useCourse = () => {
     queryKey: ['course', user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:3000/courses?email=${user?.email}`,
+        `https://lingo-camp-server.vercel.app/courses?email=${user?.email}`,
         {
           headers: {
             authorization: `bearer ${token}`,

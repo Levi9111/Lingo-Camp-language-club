@@ -40,38 +40,6 @@ export const router = createBrowserRouter([
         path: 'classes',
         element: <Classes></Classes>,
       },
-      // {
-      //   path: 'dashboard',
-      //   element: (
-      //     <PrivateRoute>
-      //       <Dashboard></Dashboard>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: 'mycourses',
-      //   element: (
-      //     <PrivateRoute>
-      //       <MyCourses></MyCourses>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: 'courses/payment/:id',
-      //   element: <Payment></Payment>,
-      // },
-      // {
-      //   path: 'history',
-      //   element: <History></History>,
-      // },
-      // {
-      //   path: 'addclass',
-      //   element: <AddClass></AddClass>,
-      // },
-      // {
-      //   path: 'myclasses',
-      //   element: <MyClasses></MyClasses>,
-      // },
     ],
   },
   {
@@ -83,6 +51,10 @@ export const router = createBrowserRouter([
     ),
     errorElement: <Error></Error>,
     children: [
+      {
+        path: '',
+        element: <History></History>,
+      },
       {
         path: 'courses/payment/:id',
         element: <Payment></Payment>,

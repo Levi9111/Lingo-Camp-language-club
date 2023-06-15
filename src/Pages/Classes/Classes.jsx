@@ -6,7 +6,7 @@ const Classes = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/classes`)
+    fetch(`https://lingo-camp-server.vercel.app/classes`)
       .then((res) => res.json())
       .then((data) => setClasses(data));
   }, []);
