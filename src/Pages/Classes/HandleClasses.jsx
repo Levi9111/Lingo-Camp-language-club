@@ -9,12 +9,14 @@ const HandleClasses = ({ course }) => {
   const { _id, name, image, instructor, numStudents, price, availableSeats } =
     course;
   const [totalSeats, setTotalSeats] = useState(availableSeats);
+  const [totalStudents, setTotalStudents] = useState(numStudents);
 
   const handleAddCourse = () => {
     console.log(course);
     const newAvailableSeats = availableSeats - 1;
-    course.availableSeats = newAvailableSeats;
+    const newNumStudents = numStudents + 1;
     setTotalSeats(newAvailableSeats);
+    setTotalStudents(newNumStudents);
 
     if (user && user.email) {
       const addedCourse = {
@@ -42,6 +44,9 @@ const HandleClasses = ({ course }) => {
             });
           }
         });
+
+
+        
     }
   };
   return (
@@ -56,7 +61,7 @@ const HandleClasses = ({ course }) => {
         ></span>
         <div className="course-content">
           <h3>Instrouctor: {instructor}</h3>
-          <p>Total Students: {numStudents}</p>
+          <p>Total Students: {totalStudents}</p>
           <p className={`${availableSeats > 0 ? '' : 'text-red-500'}`}>
             Seat Available: {totalSeats}
           </p>

@@ -62,8 +62,7 @@ const CheckoutForm = ({ course, price }) => {
       });
     }
 
-    const asyncEmail = await fetchEmail(); // email fetched asynchronously, as it shows undefined
-    console.log(asyncEmail);
+    const asyncEmail = await fetchEmail();
 
     setProcessing(true);
 
@@ -108,10 +107,10 @@ const CheckoutForm = ({ course, price }) => {
             Swal.fire({
               icon: 'success',
               title: 'Transaction completed successfully',
-              text: `Transaction ID: ${transactionId}`,
             }).then(() => {
               navigate('/mycourses');
             });
+
             axiosSecure
               .delete(`/courses/${payment.courseIdentity}`)
               .then((deleteRes) => {

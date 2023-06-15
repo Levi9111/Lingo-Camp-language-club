@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import './Login.css';
 import Warning from '../Shared/Warning/Warning';
 import { FaGoogle } from 'react-icons/fa';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -13,11 +13,16 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [passwordType, setPasswordType] = useState(false);
   const { logIn, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.form?.pathName || '/';
+
+  const handlePassWordType = () => {
+    setPasswordType(!passwordType);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -72,12 +77,18 @@ const Login = () => {
         {/* {errors.email && <p>{errors.email.message}</p>} */}
         {errors.email && <Warning>{errors.email.message}</Warning>}
         <input
-          type="password"
+          type={passwordType ? 'text' : 'password'}
           name="password"
           placeholder="password"
           {...register('password', { required: 'Password is required' })}
         />
-        {errors.email && <Warning>{errors.password.message}</Warning>}
+        {errors.password && <Warning>{errors.password.message}</Warning>}
+        <p
+          className="text-white underline cursor-pointer"
+          onClick={handlePassWordType}
+        >
+          {passwordType ? 'Hide Password' : 'Show Password'}{' '}
+        </p>
         <input type="submit" value="login" />
         <div className="flex flex-col w-full border-opacity-50">
           <p className="text-gray-300">

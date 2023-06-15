@@ -30,9 +30,15 @@ const PopularClasses = () => {
                 </div>
                 <div className="card-content">
                   <h3>Instructor: {popularClass.instructor}</h3>
-                  <p>Total number of Students: {popularClass.numStudents}</p>
-                  <p>Available seats: {popularClass.availableSeats}</p>
-                  <p>Price: ${popularClass.price}</p>
+                  <p className="class-content-text">
+                    Total number of Students: {popularClass.numStudents}
+                  </p>
+                  <p className="class-content-text">
+                    Available seats: {popularClass.availableSeats}
+                  </p>
+                  <p className="class-content-text">
+                    Price: ${popularClass.price}
+                  </p>
                 </div>
               </figcaption>
               <span className="after"></span>

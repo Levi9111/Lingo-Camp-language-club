@@ -49,11 +49,15 @@ const History = () => {
             <th>
               <h1>Name</h1>
             </th>
+
             <th>
-              <h1>Date</h1>
+              <h1>Price</h1>
             </th>
             <th>
               <h1>Transaction ID</h1>
+            </th>
+            <th>
+              <h1>Date</h1>
             </th>
           </tr>
         </thead>
@@ -61,8 +65,9 @@ const History = () => {
           {purchases.map((purchase) => (
             <tr key={purchase._id}>
               <td>{purchase?.courseName}</td>
+              <td>${purchase.price}</td>
+              <td>{purchase.courseIdentity}</td>
               <td>{purchase.date}</td>
-              <td>${purchase.courseIdentity}</td>
             </tr>
           ))}
         </tbody>

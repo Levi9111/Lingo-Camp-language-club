@@ -1,5 +1,6 @@
 .table-body {
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
   min-height: 100vh;
   font-weight: 300;
   line-height: 1.42em;
@@ -16,7 +17,7 @@
   text-align: center;
   color: #4dc3fa;
 }
-
+/* 
 h2 {
   font-size: 1em;
   font-weight: 300;
@@ -25,7 +26,7 @@ h2 {
   line-height: 1em;
   padding-bottom: 2em;
   color: #fb667a;
-}
+} */
 
 h2 a {
   font-weight: 700;

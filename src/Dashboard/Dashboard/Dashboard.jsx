@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 const Dashboard = () => {
   return (
     <section>
@@ -24,44 +24,49 @@ const Dashboard = () => {
                 </svg>
               </label>
             </div>
-            <div className="flex-1 px-2 mx-2">Navbar Title</div>
+            <div className="flex-1 px-2 mx-2">
+              <Link to="/">
+                <p className="font-bold text-xl bg-gray-300 text-gray-500 py-2 px-3 w-30 rounded-md">
+                  LingoHome
+                </p>
+              </Link>
+            </div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 {/* Navbar menu content here */}
                 <li>
-                  <Link to="/mycourses">My Courses</Link>
+                  <Link to="/dashboard/mycourses">My Courses</Link>
                 </li>
                 <li>
-                  <Link to="/history">My Purchases</Link>
+                  <Link to="/dashboard/history">My Purchases</Link>
                 </li>
                 <li>
-                  <Link to="/addclass">Add a new class</Link>
+                  <Link to="/dashboard/addclass">Add a new class</Link>
                 </li>
-
                 <li>
-                  <Link to="/myclasses">My Classes</Link>
+                  <Link to="/dashboard/myclasses">My Classes</Link>
                 </li>
               </ul>
             </div>
           </div>
           {/* Page content here */}
-          Content
+          <Outlet></Outlet>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-base-200">
             {/* Sidebar content here */}
             <li>
-              <Link to="/mycourses">My Courses</Link>
+              <Link to="/dashboard/mycourses">My Courses</Link>
             </li>
             <li>
-              <Link to="/history">My Purchases</Link>
+              <Link to="/dashboard/history">My Purchases</Link>
             </li>
             <li>
-              <Link to="/addclass">Add a new class</Link>
+              <Link to="/dashboard/addclass">Add a new class</Link>
             </li>
             <li>
-              <Link to="/myclasses">My Classes</Link>
+              <Link to="/dashboard/myclasses">My Classes</Link>
             </li>
           </ul>
         </div>

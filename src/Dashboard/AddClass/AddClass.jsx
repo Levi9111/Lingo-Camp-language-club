@@ -22,6 +22,8 @@ const AddClass = () => {
       availableSeats: +availableSeats,
       price: +price,
       category: 'good',
+      status: 'pending',
+      date: new Date().toLocaleDateString('en-US'),
     };
 
     fetch('http://localhost:3000/classes', {

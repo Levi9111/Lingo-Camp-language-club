@@ -3,7 +3,7 @@ import './Register.css';
 import Warning from '../Shared/Warning/Warning';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -14,13 +14,18 @@ const Register = () => {
     formState: { errors },
     getValues,
   } = useForm();
+
+  const [passwordType, setPasswordType] = useState(false);
+  const handlePassWordType = () => {
+    setPasswordType(!passwordType);
+  };
+
   const { createUser, googleLogin, updateUser, logOut } =
     useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
-  
-    const from = location.state?.form?.pathName || "/";
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.form?.pathName || '/';
 
   const onSubmit = (data) => {
     console.log(data);
@@ -119,7 +124,7 @@ const Register = () => {
         {errors.email && <Warning>{errors.email.message}</Warning>}
 
         <input
-          type="password"
+          type={passwordType ? 'text' : 'password'}
           name="password"
           placeholder="Password"
           {...register('password', {
@@ -130,7 +135,7 @@ const Register = () => {
         {errors.password && <Warning>{errors.password.message}</Warning>}
 
         <input
-          type="password"
+          type={passwordType ? 'text' : 'password'}
           name="confirmPassword"
           placeholder="Confirm Password"
           {...register('confirmPassword', {
@@ -142,7 +147,12 @@ const Register = () => {
         {errors.confirmPassword && (
           <Warning>{errors.confirmPassword.message}</Warning>
         )}
-
+        <p
+          className="text-white underline cursor-pointer"
+          onClick={handlePassWordType}
+        >
+          {passwordType ? 'Hide Password' : 'Show Password'}{' '}
+        </p>
         <input
           type="text"
           name="photoURL"

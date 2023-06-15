@@ -40,22 +40,49 @@ export const router = createBrowserRouter([
         path: 'classes',
         element: <Classes></Classes>,
       },
-      {
-        path: 'dashboard',
-        element: (
-          <PrivateRoute>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: 'mycourses',
-        element: (
-          <PrivateRoute>
-            <MyCourses></MyCourses>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: 'dashboard',
+      //   element: (
+      //     <PrivateRoute>
+      //       <Dashboard></Dashboard>
+      //     </PrivateRoute>
+      //   ),
+      // },
+      // {
+      //   path: 'mycourses',
+      //   element: (
+      //     <PrivateRoute>
+      //       <MyCourses></MyCourses>
+      //     </PrivateRoute>
+      //   ),
+      // },
+      // {
+      //   path: 'courses/payment/:id',
+      //   element: <Payment></Payment>,
+      // },
+      // {
+      //   path: 'history',
+      //   element: <History></History>,
+      // },
+      // {
+      //   path: 'addclass',
+      //   element: <AddClass></AddClass>,
+      // },
+      // {
+      //   path: 'myclasses',
+      //   element: <MyClasses></MyClasses>,
+      // },
+    ],
+  },
+  {
+    path: 'dashboard',
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    errorElement: <Error></Error>,
+    children: [
       {
         path: 'courses/payment/:id',
         element: <Payment></Payment>,
@@ -71,6 +98,14 @@ export const router = createBrowserRouter([
       {
         path: 'myclasses',
         element: <MyClasses></MyClasses>,
+      },
+      {
+        path: 'mycourses',
+        element: (
+          <PrivateRoute>
+            <MyCourses></MyCourses>
+          </PrivateRoute>
+        ),
       },
     ],
   },

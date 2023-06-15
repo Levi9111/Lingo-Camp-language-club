@@ -1,8 +1,9 @@
+import './Footer.css';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer  className='overflow-hidden'>
       <section className="flex flex-col md:flex-row items-start justify-between p-10 bg-base-200 text-base-content">
         <div className="md:w-1/2 mb-10">
           <span className="footer-title">ABOUT LingoCamp</span>
@@ -47,16 +48,18 @@ const Footer = () => {
                 Subscribe to our weekly newsletter.
               </span>
             </label>
-            <div className="relative">
+            <form>
               <input
-                type="text"
-                placeholder="username@site.com"
-                className="input input-bordered w-full pr-16"
+                className="newsletter-input newsletter-input-email"
+                type="email"
+                placeholder="email@provider.com"
               />
-              <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
-                Subscribe
-              </button>
-            </div>
+              <input
+                className="newsletter-submit2"
+                type="submit"
+                value="Submit"
+              />
+            </form>
           </div>
         </div>
       </section>
