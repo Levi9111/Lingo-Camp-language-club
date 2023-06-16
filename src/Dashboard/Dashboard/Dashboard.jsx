@@ -6,7 +6,6 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.email);
 
   const { data: users = [], refetch } = useQuery(['users'], async () => {
     const res = await fetch(`https://lingo-camp-server.vercel.app/users`);
@@ -17,6 +16,7 @@ const Dashboard = () => {
     (singleUser) => singleUser.email === user.email,
   );
 
+  console.log(user.email);
   console.log(currentUser);
 
   return (
@@ -69,6 +69,9 @@ const Dashboard = () => {
                   <li>
                     <Link to="/dashboard/allusers">All Users</Link>
                   </li>
+                  <li>
+                    <Link to="/dashboard/classesstatus">Manage Classes</Link>
+                  </li>
                 </ul>
               )}
 
@@ -82,6 +85,9 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <Link to="/dashboard/allusers">All Users</Link>
+                  </li>
+                  <li>
+                    <Link to="/dashboard/classesstatus">Manage Classes</Link>
                   </li>
                 </ul>
               )}
@@ -127,7 +133,7 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           {/* Sidebar content here */}
           {currentUser?.role1 && currentUser?.role2 && (
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal z-30 ">
               <li>
                 <Link to="/dashboard/mycourses">My Courses</Link>
               </li>
@@ -143,11 +149,14 @@ const Dashboard = () => {
               <li>
                 <Link to="/dashboard/allusers">All Users</Link>
               </li>
+              <li>
+                <Link to="/dashboard/classesstatus">Classes Status</Link>
+              </li>
             </ul>
           )}
 
           {currentUser?.role1 && !currentUser?.role2 && (
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal z-30">
               <li>
                 <Link to="/dashboard/mycourses">My Courses</Link>
               </li>
@@ -157,11 +166,14 @@ const Dashboard = () => {
               <li>
                 <Link to="/dashboard/allusers">All Users</Link>
               </li>
+              <li>
+                <Link to="/dashboard/classesstatus">Classes Status</Link>
+              </li>
             </ul>
           )}
 
           {!currentUser?.role1 && currentUser?.role2 && (
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal z-30">
               <li>
                 <Link to="/dashboard/mycourses">My Courses</Link>
               </li>
@@ -181,7 +193,7 @@ const Dashboard = () => {
           )}
 
           {!currentUser?.role1 && !currentUser?.role2 && (
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal z-30">
               <li>
                 <Link to="/dashboard/mycourses">My Courses</Link>
               </li>
@@ -197,3 +209,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

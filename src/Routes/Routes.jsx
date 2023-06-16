@@ -14,6 +14,7 @@ import History from '../Dashboard/History/History';
 import AddClass from '../Dashboard/AddClass/AddClass';
 import MyClasses from '../Dashboard/MyClasses/MyClasses';
 import AllUsers from '../Dashboard/AllUsers/AllUsers';
+import ClassesStatus from '../Dashboard/ClassesStatus/ClassesStatus';
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
       {
         path: 'allusers',
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: 'classesstatus',
+        element: <ClassesStatus></ClassesStatus>,
       },
     ],
   },

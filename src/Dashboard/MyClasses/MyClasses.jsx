@@ -23,6 +23,8 @@ const MyClasses = () => {
       });
   }, [user]);
 
+  console.log(classes);
+
   return (
     <section className="table-body" translate="no">
       <h1>
@@ -37,10 +39,10 @@ const MyClasses = () => {
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th>Date</th>
               <th>Status</th>
               <th>Students Enrolled</th>
               <th>Feedback</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -48,10 +50,22 @@ const MyClasses = () => {
               <tr className="hover" key={classItem._id}>
                 <th>{index + 1}</th>
                 <td>{classItem.name}</td>
-                <td>{classItem.status}</td>
                 <td>0</td>
                 <td>0</td>
                 <td>None</td>
+                <td
+                  className={
+                    classItem.status === 'pending'
+                      ? 'text-yellow-400'
+                      : classItem.status === 'approved'
+                      ? 'text-green-400'
+                      : classItem.status === 'denied'
+                      ? 'text-red-400'
+                      : ''
+                  }
+                >
+                  {classItem.status}
+                </td>
               </tr>
             ))}
           </tbody>

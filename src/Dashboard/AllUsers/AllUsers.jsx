@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AllUsers = () => {
