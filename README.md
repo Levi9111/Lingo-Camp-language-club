@@ -1,6 +1,6 @@
 # LingoCamp
 
-Live Site: [LingoCamp](https://www.lingocamp.com)
+Live Site: [LingoCamp](https://lingocamp-4fdac.web.app/)
 
 ## Website Features
 
