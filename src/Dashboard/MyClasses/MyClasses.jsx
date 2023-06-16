@@ -23,12 +23,15 @@ const MyClasses = () => {
       });
   }, [user]);
 
-
   return (
-    <div>
-      <h1>My Classes</h1>
+    <section className="table-body" translate="no">
+      <h1>
+        <span className="yellow">My</span>
+        <span className="blue">&lt;</span>Classes
+        <span className="blue">&gt;</span>{' '}
+      </h1>
       <div className="overflow-x-auto">
-        <table className="table mx-auto">
+        <table className="table-container">
           {/* head */}
           <thead>
             <tr>
@@ -48,17 +51,13 @@ const MyClasses = () => {
                 <td>{classItem.status}</td>
                 <td>0</td>
                 <td>0</td>
+                <td>None</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <ul>
-        {classes.map((classItem) => (
-          <li key={classItem._id}>{classItem.name}</li>
-        ))}
-      </ul>
-    </div>
+    </section>
   );
 };
 

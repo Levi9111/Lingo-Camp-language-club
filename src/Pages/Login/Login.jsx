@@ -34,7 +34,7 @@ const Login = () => {
         Swal.fire({
           icon: 'success',
           title: 'Login Successful',
-          text: 'Welcome back! You are now logged in.',
+          text: `Welcome back ${user.displayName}! You are now logged in.`,
           showConfirmButton: true,
           confirmButtonText: 'Continue',
         });
@@ -55,8 +55,23 @@ const Login = () => {
     googleLogin()
       .then((response) => {
         const user = response.user;
+        Swal.fire({
+          icon: 'success',
+          title: 'Login Successful',
+          text: `Welcome ${user.displayName}! You are now logged in.`,
+          showConfirmButton: true,
+          confirmButtonText: 'Continue',
+        });
+        navigate(from, { replace: true });
       })
       .catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Login Failed',
+          text: `Oops! ${err}`,
+          cancelButtonText: 'Ok',
+          showCancelButton: false,
+        });
       });
   };
 

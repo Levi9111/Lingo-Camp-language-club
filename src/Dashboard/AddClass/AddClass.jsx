@@ -83,11 +83,19 @@ const AddClass = () => {
           </form>
         </div>
       )}
-      {!formVisible && formSuccess && (
-        <div className="wrapper form-success">
-          {/* Success message or additional content */}
-        </div>
-      )}
+      <ul className="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      ;
     </div>
   );
 };

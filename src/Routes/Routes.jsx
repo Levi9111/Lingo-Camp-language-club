@@ -13,6 +13,7 @@ import Payment from '../Pages/Payment/Payment';
 import History from '../Dashboard/History/History';
 import AddClass from '../Dashboard/AddClass/AddClass';
 import MyClasses from '../Dashboard/MyClasses/MyClasses';
+import AllUsers from '../Dashboard/AllUsers/AllUsers';
 
 export const router = createBrowserRouter([
   {
@@ -69,7 +70,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'myclasses',
-        element: <MyClasses></MyClasses>,
+        element: (
+          <PrivateRoute>
+            <MyClasses></MyClasses>
+          </PrivateRoute>
+        ),
       },
       {
         path: 'mycourses',
@@ -78,6 +83,10 @@ export const router = createBrowserRouter([
             <MyCourses></MyCourses>
           </PrivateRoute>
         ),
+      },
+      {
+        path: 'allusers',
+        element: <AllUsers></AllUsers>,
       },
     ],
   },
