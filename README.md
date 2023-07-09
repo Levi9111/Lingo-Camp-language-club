@@ -13,7 +13,7 @@ Live Site: [LingoCamp](https://lingocamp-4fdac.web.app/)
 7. Interactive Lessons: Engage in interactive lessons with multimedia content, including audio and video materials, to enhance language learning.
 8. Community Forum: Join a vibrant community of language learners to connect, discuss, and practice with fellow students from around the world.
 9. Language Certifications: Prepare for language proficiency exams and earn certifications upon successful completion of courses.
-10. Responsive Design: LingoCamp is optimized for various devices, providing a seamless user experience on desktop, tablets, and mobile.
+10. Responsive Design: LingoCamp is optimized for various devices, providing a seamless user experience on desktops, tablets, and mobile.
 
 ## Technology Used
 
@@ -26,6 +26,3 @@ Live Site: [LingoCamp](https://lingocamp-4fdac.web.app/)
 - Tailwind CSS: Utility-first CSS framework for styling
 - React Hook Form: Library for building forms with validation
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
